@@ -1,0 +1,485 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"dodg",
+				"dodgeTableS"
+			],
+			[
+				"mask",
+				"maskTable"
+			],
+			[
+				"mo",
+				"mouseSleep"
+			],
+			[
+				"rece",
+				"receiveKeyboard"
+			],
+			[
+				"has",
+				"hasmoved"
+			],
+			[
+				"old",
+				"oldmousepacketid"
+			],
+			[
+				"dt",
+				"DTi"
+			],
+			[
+				"dodge",
+				"dodgeTableS"
+			],
+			[
+				"chang",
+				"changeChannel"
+			],
+			[
+				"tim",
+				"timerisr"
+			],
+			[
+				"bu",
+				"buf"
+			],
+			[
+				"spi",
+				"spiReadWrite"
+			],
+			[
+				"ce",
+				"CE"
+			],
+			[
+				"tx",
+				"txPacket"
+			],
+			[
+				"buf",
+				"bufPacket"
+			],
+			[
+				"pack",
+				"Packet"
+			],
+			[
+				"maskt",
+				"maskTick"
+			],
+			[
+				"pi",
+				"PID"
+			],
+			[
+				"rx",
+				"rxAddress"
+			],
+			[
+				"addr",
+				"addressLength"
+			],
+			[
+				"def",
+				"define"
+			],
+			[
+				"rf",
+				"rfconfig"
+			],
+			[
+				"url",
+				"urllib"
+			],
+			[
+				"ra",
+				"random"
+			],
+			[
+				"__",
+				"__members__"
+			],
+			[
+				"w",
+				"Weekday"
+			],
+			[
+				"ip",
+				"iphone"
+			],
+			[
+				"cl",
+				"class	New Class"
+			],
+			[
+				"cla",
+				"Classmates"
+			],
+			[
+				"a",
+				"arg"
+			],
+			[
+				"print_s",
+				"print_self"
+			],
+			[
+				"prin",
+				"print"
+			],
+			[
+				"pri",
+				"print_score"
+			],
+			[
+				"arg",
+				"argv"
+			],
+			[
+				"max",
+				"max_2"
+			],
+			[
+				"int",
+				"int_2"
+			],
+			[
+				"in",
+				"int"
+			],
+			[
+				"part",
+				"partial"
+			],
+			[
+				"fun",
+				"functools"
+			],
+			[
+				"s",
+				"sTu2"
+			],
+			[
+				"st",
+				"sTu2"
+			],
+			[
+				"by",
+				"by_score"
+			],
+			[
+				"y",
+				"yield"
+			],
+			[
+				"sw",
+				"sW1"
+			],
+			[
+				"is",
+				"isempty"
+			],
+			[
+				"sr",
+				"sR2"
+			],
+			[
+				"sR",
+				"sR1"
+			],
+			[
+				"po",
+				"pows"
+			],
+			[
+				"pro",
+				"prod"
+			],
+			[
+				"sl",
+				"sL2"
+			],
+			[
+				"I",
+				"Iterator"
+			],
+			[
+				"App",
+				"Apple"
+			],
+			[
+				"list",
+				"list"
+			],
+			[
+				"val",
+				"value"
+			],
+			[
+				"se",
+				"setup"
+			],
+			[
+				"gpio",
+				"GPIO"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "iofile.py",
+			"settings":
+			{
+				"buffer_size": 616,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 146.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Program Files/Sublime Text 3/Data/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Program Files/Sublime Text 3/Data/Packages/Default/Default (Windows).sublime-keymap",
+		"/C/Users/Administrator/Desktop/picture/75490",
+		"/C/python-learn/study/iofile.py",
+		"/C/Users/Administrator/Desktop/alipaywapdirect/手机网站支付接口-alipay.wap.create.direct.pay.by.user(20151224)/alipay.wap.create.direct.pay.by.user-PHP-UTF-8/alipay.config.php",
+		"/C/Users/Administrator/Desktop/alipaywapdirect/手机网站支付接口-alipay.wap.create.direct.pay.by.user(20151224)/alipay.wap.create.direct.pay.by.user-PHP-UTF-8/notify_url.php",
+		"/C/Users/Administrator/Desktop/picture/884678",
+		"/C/Users/Administrator/Desktop/11111.c",
+		"/C/Users/Administrator/Desktop/123111.c",
+		"/C/Users/Administrator/Desktop/学习经历.txt",
+		"/C/Users/Administrator/Desktop/文本(2015-12-28 185041).txt",
+		"/C/Users/Administrator/Desktop/新建文件夹/文本(2015-12-30 184850).txt",
+		"/C/Users/Administrator/Desktop/新建文件夹/文本(2015-12-30 184859).txt",
+		"/C/Users/Administrator/Desktop/新建文件夹/文本(2015-12-30 184854).txt",
+		"/C/Users/Administrator/Desktop/新建文件夹/文本(2015-12-30 184903).txt",
+		"/C/Users/Administrator/Desktop/新建文件夹/文本(2015-12-30 184911).txt",
+		"/C/Users/Administrator/Desktop/新建文件夹/文本(2015-12-30 184930).txt",
+		"/C/Users/Administrator/Desktop/新建文件夹/文本(2015-12-30 184939).txt",
+		"/C/Users/Administrator/Desktop/新建文件夹/文本(2015-12-30 184952).txt",
+		"/C/Users/Administrator/Desktop/新建文件夹/文本(2015-12-30 185103).txt",
+		"/C/Users/Administrator/Desktop/新建文件夹/文本(2015-12-30 185137).txt",
+		"/C/Users/Administrator/Desktop/新建文件夹/文本(2015-12-29 074613).txt",
+		"/C/Users/Administrator/Desktop/新建文件夹/文本(2015-12-30 184838).txt",
+		"/C/Users/Administrator/Desktop/alipaywapdirect/手机网站支付接口-alipay.wap.create.direct.pay.by.user(20151224)/alipay.wap.create.direct.pay.by.user-PHP-UTF-8/return_url.php",
+		"/C/Users/Administrator/Desktop/97E924B61B850040D29775DAE5E0C7AB_39E28B",
+		"/C/Users/Administrator/Desktop/alipaywapdirect/手机网站支付接口-alipay.wap.create.direct.pay.by.user(20151224)/alipay.wap.create.direct.pay.by.user-PHP-UTF-8/readme.txt",
+		"/C/Users/Administrator/Desktop/V5-134_nRF24L01无线通信/User/bsp_stm32f4xx/src/bsp_nrf24l01.c",
+		"/C/python-learn/study/log.txt",
+		"/D/design/3-crazyflie/crazyflie-firmware/modules/src/stabilizer.c",
+		"/C/python-learn/study/weather.py",
+		"/D/Design/crazyfile/crazyflie-electronics-master/README.md",
+		"/D/Design/raspberrypi/learnPI",
+		"/C/python-learn/study/newer.py",
+		"/C/python-learn/study/test.py",
+		"/G/L-杂乱/work杂乱/杂乱/Pictures/FFT.java",
+		"/G/L-杂乱/work杂乱/156/xxxxx/滤波器.C",
+		"/C/Users/Administrator/AppData/Local/Temp/Rar$DRa0.106/SN8P2602B.asm",
+		"/C/python-learn/study/com/student.py",
+		"/C/python-learn/study/class.py",
+		"/C/python-learn/hello.py",
+		"/C/Program Files/Sublime Text 3/Data/Packages/User/Preferences.sublime-settings"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"txPacket",
+			"urllib2",
+			"Weekday",
+			">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>",
+			"==============================",
+			"functools",
+			"func",
+			"import",
+			"remoIO",
+			"11"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"urllib",
+			"Week",
+			">>>====================================<<<",
+			">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>",
+			"remoLed",
+			"20"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"path": "C:\\python-learn\\study"
+		}
+	],
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "iofile.py",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 616,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"encoding_helper_encoding": "cp936",
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": -0.0,
+						"translation.y": 108.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 118.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "",
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 228.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

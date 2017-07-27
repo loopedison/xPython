@@ -1,0 +1,6 @@
+helper
+
+0.ico/bitico.ico,   :program ico
+1.main.py,          :main program
+2.xxtea.py,         :encrypt and decrypt function
+3.xxtea.dll,        :lib
