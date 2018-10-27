@@ -1,0 +1,40 @@
+{
+    "GAMELIST": [
+        {
+            "GameName": "俄罗斯方块",
+            "GamePath": ".\\game\\QtTetris.exe"
+        },
+        {
+            "GameName": "Lines VR",
+            "GamePath": "E:\\Games\\VR_GAMES\\LinesVR\\LinesVR.exe"
+        },
+        {
+            "GameName": "Earth",
+            "GamePath": ".\\game\\earth.exe"
+        }
+    ],
+    "SERVERLIST": [
+        {
+            "ServerName":"Server0",
+            "ServerIP": "192.168.1.234"
+        },
+        {
+            "ServerName":"Server1",
+            "ServerIP": "192.168.1.100"
+        },
+        {
+            "ServerName":"Server2",
+            "ServerIP": "192.168.1.101"
+        },
+        {
+            "ServerName":"Server3",
+            "ServerIP": "192.168.1.102"
+        },
+        {
+            "ServerName":"Server4",
+            "ServerIP": "192.168.1.103"
+        }
+    ],
+    "Language": "English",
+    "ServerPort": "9527"
+}
