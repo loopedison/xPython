@@ -179,7 +179,7 @@ class MainClient(QDialog, Ui_Dialog):
             nCmd = {'Option':'Restart', 'Args':' '}
             self.gCmdList.append(nCmd)
         elif self.sender() == self.AboutAction:
-            QMessageBox.information(self,"About vLauncher", self.tr("Name \t:vLauncher\r\nVersion\t:v0.1.1\r\nAuthor\t:loopedison"))
+            QMessageBox.information(self,"About vLauncher", self.tr("Name \t:vLauncher\r\nVersion\t:v0.1.2\r\nAuthor\t:loopedison"))
     
     def closeEvent(self, event):
         self.gRunStatus = -1

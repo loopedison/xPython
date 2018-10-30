@@ -37,8 +37,10 @@ class MainServer(QDialog, Ui_Dialog):
         self.mainSetup()
     
     def mainSetup(self):
-        # running counter
-        self.gRunStatus = 0
+        # WorkPath
+        self.gWorkPath = os.getcwd()
+        print('WorkPath:%s' %(self.gWorkPath))
+        
         # commander list
         self.gRunEnv = {'curGameIndex':'0', 'curGameStatus':'IDLE'}
         self.gCmdList = []
@@ -87,36 +89,36 @@ class MainServer(QDialog, Ui_Dialog):
                 try:
                     # shutdown
                     os.system("shutdown -s -t 0")
-                    self.label_Status.setText("Status：Shutdown!")
                 except Exception:
-                    self.label_Status.setText("Status：Shutdown Failed!")
-                pass
+                    pass
             elif newCmd['Option'] == 'Restart':
                 try:
                     # shutdown
                     os.system("shutdown -r -t 0")
-                    self.label_Status.setText("Status：Restart!")
                 except Exception:
-                    self.label_Status.setText("Status：Restart Failed!")
-                pass
+                    pass
             elif newCmd['Option'] == 'StartGame':
                 if self.gRunEnv['curGameStatus'] == 'IDLE':
                     self.gRunEnv['curGameIndex'] = newCmd['Args']
                     try:
                         # Start application current
-                        subprocess.Popen(self.gGameList[int(self.gRunEnv['curGameIndex'])]['GamePath'])
+                        # Change current path, then process, return at last
+                        os.chdir(os.path.split(self.gGameList[int(self.gRunEnv['curGameIndex'])]['GamePath'])[0])
+                        subprocess.Popen(os.path.split(self.gGameList[int(self.gRunEnv['curGameIndex'])]['GamePath'])[1])
                         self.gRunEnv['curGameStatus'] = 'RUNNING'
                         self.label_Status.setText("Status：[%s] Running!" %(self.gGameList[int(self.gRunEnv['curGameIndex'])]['GameName']))
                         self.pushButton_Ctrl.setText("Stop")
                         self.pushButton_Ctrl.setStyleSheet("background-color: rgb(255, 0, 0);")
                     except Exception:
                         self.label_Status.setText("Status：[%s] Open Failed!" %(self.gGameList[int(self.gRunEnv['curGameIndex'])]['GameName']))
+                    # Return to workpath
+                    os.chdir(self.gWorkPath)
                     pass
             elif newCmd['Option'] == 'StopGame':
                 if self.gRunEnv['curGameStatus'] == 'RUNNING':
                     try:
                         # Stop application current
-                        os.system("taskkill /F /IM " + str(os.path.split(self.gGameList[int(self.gRunEnv['curGameIndex'])]['GamePath'])[1]))
+                        os.system("taskkill /F /T /IM %s" %(os.path.splitext(os.path.split(self.gGameList[int(self.gRunEnv['curGameIndex'])]['GamePath'])[1])[0]+'*'))
                         self.gRunEnv['curGameStatus'] = 'IDLE'
                         self.label_Status.setText("Status：[%s] finished!" %(self.gGameList[int(self.gRunEnv['curGameIndex'])]['GameName']))
                         self.pushButton_Ctrl.setText("Run")
@@ -211,7 +213,7 @@ class MainServer(QDialog, Ui_Dialog):
             nCmd = {'Option':'Restart', 'Args':' '}
             self.gCmdList.append(nCmd)
         elif self.sender() == self.AboutAction:
-            QMessageBox.information(self,"About vLauncher", self.tr("Name \t:vLauncher\r\nVersion\t:v0.1.1\r\nAuthor\t:loopedison"))
+            QMessageBox.information(self,"About vLauncher", self.tr("Name \t:vLauncher\r\nVersion\t:v0.1.2\r\nAuthor\t:loopedison"))
     
 
 #===============================================================================
