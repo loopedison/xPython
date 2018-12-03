@@ -15,7 +15,7 @@ import operator
 
 from PyQt5.QtCore import *
 from PyQt5 import QtWidgets
-from PyQt5.QtWidgets import QDialog, QAction, QMenu, QMessageBox
+from PyQt5.QtWidgets import QDialog, QAction, QMenu, QMessageBox, QSystemTrayIcon
 from PyQt5.QtGui import *
 
 from Ui_client import Ui_Dialog
@@ -36,8 +36,6 @@ class MainClient(QDialog, Ui_Dialog):
         self.mainSetup()
     
     def mainSetup(self):
-        # running counter
-        self.gRunStatus = 0
         # commander list
         self.gRunEnv = {'curGameIndex':'0'}
         self.gCmdList = []
@@ -55,6 +53,18 @@ class MainClient(QDialog, Ui_Dialog):
         self.shutdowAction.triggered.connect(self.on_toolButton_clicked)
         self.restartAction.triggered.connect(self.on_toolButton_clicked)
         self.AboutAction.triggered.connect(self.on_toolButton_clicked)
+        
+        # add minimumHINT and closeHINT
+        self.setWindowFlags(Qt.Widget)
+        
+        # support system Tray
+        self.sysTrayIcon = QSystemTrayIcon()
+        self.sysTrayIcon.setIcon(QIcon("image/vLauncher.ico"))
+        self.sysTrayIconMenu=QMenu()
+        self.sysTrayIconMenu.addAction(QAction('Show', self, triggered=self.showNormal))
+        self.sysTrayIconMenu.addAction(QAction('Exit', self, triggered=self.mainExit))
+        self.sysTrayIcon.setContextMenu(self.sysTrayIconMenu)
+        self.sysTrayIcon.setToolTip('vLauncher Client')
         
         # load configurations from "config.json"
         self.gConfDict = {}
@@ -120,7 +130,7 @@ class MainClient(QDialog, Ui_Dialog):
     
     def clientThreadHandle(self):
         # Scan servers
-        while self.gRunStatus > 0:
+        while True:
             for xIndex, xServer in enumerate(self.gConfDict['SERVERLIST']):
                 if operator.eq(self.gServerDict[xServer['ServerName']]['Status'], 'Online'):
                     # if Online
@@ -150,13 +160,11 @@ class MainClient(QDialog, Ui_Dialog):
                         pass
                     pass
             time.sleep(5)
-        
-        for xIndex, xServer in enumerate(self.gConfDict['SERVERLIST']):
-            if operator.eq(self.gServerDict[xServer['ServerName']]['Status'], 'Online'):
-                self.gServerDict[xServer['ServerName']]['Socket'].close()
-                self.gServerDict[xServer['ServerName']]['Status'] = 'Offline'
-                self.gServerDict[xServer['ServerName']]['Socket'] = []
-        print('clientThreadHandle exit')
+    
+    def mainExit(self):
+        self.hide()
+        self.sysTrayIcon.setVisible(False)
+        QtWidgets.QApplication.instance().quit()
     
     @pyqtSlot()
     def on_pushButton_Ctrl_clicked(self):
@@ -171,6 +179,7 @@ class MainClient(QDialog, Ui_Dialog):
         nCmd['Args'] = self.gRunEnv['curGameIndex']
         self.gCmdList.append(nCmd)
     
+    @pyqtSlot()
     def on_toolButton_clicked(self):
         if self.sender() == self.shutdowAction:
             nCmd = {'Option':'Shutdown', 'Args':' '}
@@ -181,10 +190,11 @@ class MainClient(QDialog, Ui_Dialog):
         elif self.sender() == self.AboutAction:
             QMessageBox.information(self,"About vLauncher", self.tr("Name \t:vLauncher\r\nVersion\t:v0.1.2\r\nAuthor\t:loopedison"))
     
+    @pyqtSlot()
     def closeEvent(self, event):
-        self.gRunStatus = -1
-        event.accept()
-
+        self.hide()
+        event.ignore()
+    
 #===============================================================================
 if __name__ == "__main__":
     _app = QtWidgets.QApplication(sys.argv)

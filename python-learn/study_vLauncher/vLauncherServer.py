@@ -16,7 +16,7 @@ import operator
 
 from PyQt5 import QtWidgets
 from PyQt5.QtCore import *
-from PyQt5.QtWidgets import QDialog, QAction, QMenu, QMessageBox
+from PyQt5.QtWidgets import QDialog, QAction, QMenu, QMessageBox, QSystemTrayIcon
 from PyQt5.QtGui import *
 
 from Ui_server import Ui_Dialog
@@ -58,6 +58,18 @@ class MainServer(QDialog, Ui_Dialog):
         self.shutdowAction.triggered.connect(self.on_toolButton_clicked)
         self.restartAction.triggered.connect(self.on_toolButton_clicked)
         self.AboutAction.triggered.connect(self.on_toolButton_clicked)
+        
+        # add minimumHINT and closeHINT
+        self.setWindowFlags(Qt.Widget)
+        
+        # support system Tray
+        self.sysTrayIcon = QSystemTrayIcon()
+        self.sysTrayIcon.setIcon(QIcon("image/vLauncher.ico"))
+        self.sysTrayIconMenu=QMenu()
+        self.sysTrayIconMenu.addAction(QAction('Show', self, triggered=self.showNormal))
+        self.sysTrayIconMenu.addAction(QAction('Exit', self, triggered=self.mainExit))
+        self.sysTrayIcon.setContextMenu(self.sysTrayIconMenu)
+        self.sysTrayIcon.setToolTip('vLauncher Server')
         
         # load configurations from "config.json"
         self.gConfDict = {}
@@ -196,6 +208,11 @@ class MainServer(QDialog, Ui_Dialog):
         print('[%s] disconnected!'%(str(destAddr)))
         self.serverThreadList['ServAddr'].remove(destAddr)  #=====list=====
     
+    def mainExit(self):
+        self.hide()
+        self.sysTrayIcon.setVisible(False)
+        QtWidgets.QApplication.instance().quit()
+    
     @pyqtSlot()
     def on_pushButton_Ctrl_clicked(self):
         if self.pushButton_Ctrl.text() == 'Run':
@@ -205,6 +222,7 @@ class MainServer(QDialog, Ui_Dialog):
             nCmd = {'Option':'StopGame', 'Args':'0'}
         self.gCmdList.append(nCmd)
     
+    @pyqtSlot()
     def on_toolButton_clicked(self):
         if self.sender() == self.shutdowAction:
             nCmd = {'Option':'Shutdown', 'Args':' '}
@@ -215,7 +233,11 @@ class MainServer(QDialog, Ui_Dialog):
         elif self.sender() == self.AboutAction:
             QMessageBox.information(self,"About vLauncher", self.tr("Name \t:vLauncher\r\nVersion\t:v0.1.2\r\nAuthor\t:loopedison"))
     
-
+    @pyqtSlot()
+    def closeEvent(self, event):
+        event.ignore()
+        self.hide()
+    
 #===============================================================================
 if __name__ == "__main__":
     _app = QtWidgets.QApplication(sys.argv)
