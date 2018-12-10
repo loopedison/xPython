@@ -1,0 +1,13 @@
+{
+    "GAMELIST": [
+        {
+            "GameName": "Lines VR",
+            "GamePath": "E:\\Games\\VR_GAMES\\LinesVR\\LinesVR.exe"
+        },
+        {
+            "GameName": "Earth",
+            "GamePath": ".\\game\\earth.exe"
+        }
+    ],
+    "ServerPort": "9527"
+}
