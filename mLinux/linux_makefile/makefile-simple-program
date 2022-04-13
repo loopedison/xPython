@@ -1,0 +1,31 @@
+#######################################################
+# Makefile for simple programs
+#######################################################
+
+# set your own environment option
+CC = g++
+CC_FLAG = -Wall
+
+# set your inc and lib
+INC = 
+LIB = -lpthread
+
+# make target lib and revelant obj
+PRG = threadpooltest
+OBJ = CThreadManage.o CThreadPool.o CThread.o CWorkerThread.o threadpooltest.o
+
+# all target
+all:$(PRG)
+
+$(PRG):$(OBJ)
+	$(CC) $(INC) $(LIB) -o $@ $(OBJ)
+
+.SUFFIXES: .c .o .cpp
+.cpp.o:
+	$(CC) $(CC_FLAG) $(INC) -c $*.cpp -o $*.o
+
+.PRONY:clean
+clean:
+	@echo "removing linked and compiled files ......"
+	rm -f $(OBJ) $(PRG)
+
